@@ -256,7 +256,7 @@ select		c.nombre, c.apellido
 from		clientes c
 join		facturas f
 on			c.id_cliente=f.id_cliente
-where		fecha = ( select min(fecha) from facturas);
+where		fecha = (select min(fecha) from facturas);
 
 
 -- 11 listar los clientes a los que no se les haya hecho alguna factura
@@ -308,9 +308,9 @@ alter table articulos add precio_costo double, add precio_venta double;
 
 -- 17 agregar un campo del tipo decimal, llamado sueldo_empleado, a la tabla vendedores. El mismo tendrá un valor inicial para todos de 450.010,00
 
-alter table	vendedores add sueldo_empleado double;
+alter table	vendedores add sueldo_empleado decimal;
 
-update vendedores set sueldo_empleado = 450010.00;
+update vendedores set sueldo_empleado =  450010.00;
 
 
 -- 18 actualizar todos los stock_minimo y stock maximo a 100 y a 500 respectivamente
